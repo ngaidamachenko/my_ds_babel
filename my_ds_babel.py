@@ -12,7 +12,7 @@ def sql_to_csv(database, table_name):
     df = pd.DataFrame(cursor, columns=names)
     csv_name = "list_" + table_name + ".csv"
     df.to_csv(csv_name, index=False)
-    return df.to_csv(index=False)[:-1]
+    return df.to_csv(index=False)[:-1] #to delete \n after the last row
 
 
 def csv_to_sql(csv_content, database, table_name):
